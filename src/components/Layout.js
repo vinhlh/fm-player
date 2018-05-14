@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import { withStyles } from 'material-ui/styles'
-import Drawer from 'material-ui/Drawer'
-import AppBar from 'material-ui/AppBar'
-import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
-import Divider from 'material-ui/Divider'
-import IconButton from 'material-ui/IconButton'
+import { withStyles } from '@material-ui/core/styles'
+import Drawer from '@material-ui/core/Drawer'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
+import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ListSubheader from 'material-ui/List/ListSubheader'
+import ListSubheader from '@material-ui/core/ListSubheader'
 import Button from '@material-ui/core/Button'
 
 const drawerWidth = 240
@@ -97,7 +97,7 @@ const styles = theme => ({
 })
 
 class Layout extends Component {
-  propTypes = {}
+  static propTypes = {}
 
   state = {
     open: false
