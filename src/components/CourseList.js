@@ -34,7 +34,7 @@ const CourseList = ({
           }}
         >
           <ListItemText
-            primary={`${courseId} ${courseId === activeCourse}`}
+            primary={courseId}
             secondary={status}
           />
         </ListItem>

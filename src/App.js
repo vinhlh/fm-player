@@ -43,7 +43,8 @@ class App extends Component {
               courseDetails: {
                 ...this.state.courseDetails,
                 [courseId]: courseInfo
-              }
+              },
+              activeLesson: courseInfo.lessonHashes[0]
             })
           )
       })
@@ -73,12 +74,7 @@ class App extends Component {
   }
 
   render() {
-    const {
-      allCourses,
-      activeCourse,
-      activeLesson,
-      fetching
-    } = this.state
+    const { allCourses, activeCourse, activeLesson, fetching } = this.state
     const courseDetail = this.getCourseDetail()
     return (
       <Layout
@@ -101,7 +97,12 @@ class App extends Component {
             fetching={fetching}
             {...props}
           />,
-          <Player key="player" src={this.getCurrentVideo()} />
+          <Player
+            key="player"
+            src={this.getCurrentVideo()}
+            courseDetail={courseDetail}
+            activeLesson={activeLesson}
+          />
         ]}
       </Layout>
     )

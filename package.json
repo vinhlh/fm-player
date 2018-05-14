@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.0.0-rc.0",
     "@material-ui/icons": "^1.0.0-beta.43",
     "classnames": "^2.2.5",
     "gh-pages": "^1.1.0",
