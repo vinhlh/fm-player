@@ -30,15 +30,23 @@ const styles = theme => ({
   }
 })
 
+const LessonInfo = ({ lessonInfo }) =>
+  lessonInfo && (
+    <div>
+      <Typography variant="headline" component="h2" gutterBottom>
+        {lessonInfo.title}
+      </Typography>
+      <Typography component="p">{lessonInfo.description}</Typography>
+    </div>
+  )
+
 const CourseDetail = ({ classes, courseDetail, activeLesson }) => {
   const { resources, lessonData } = courseDetail
   return (
     <div className={classes.courseDetail}>
       <Card className={classes.card}>
         <CardContent>
-          <Typography component="p">
-            {activeLesson && lessonData[activeLesson].description}
-          </Typography>
+          <LessonInfo lessonInfo={lessonData[activeLesson]} />
         </CardContent>
         <CardActions>
           {resources.map(({ label, url }) => (
