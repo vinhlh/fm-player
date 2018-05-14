@@ -7,6 +7,7 @@
     "@material-ui/icons": "^1.0.0-beta.43",
     "classnames": "^2.2.5",
     "gh-pages": "^1.1.0",
+    "material-ui": "^1.0.0-beta.47",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
