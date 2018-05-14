@@ -13,6 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListSubheader from 'material-ui/List/ListSubheader'
+import Button from '@material-ui/core/Button'
 
 const drawerWidth = 240
 
@@ -33,7 +34,8 @@ const styles = theme => ({
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
+    paddingRight: 24
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -88,6 +90,9 @@ const styles = theme => ({
       duration: theme.transitions.duration.enteringScreen
     }),
     marginLeft: 0
+  },
+  flex: {
+    flex: 1
   }
 })
 
@@ -131,9 +136,16 @@ class Layout extends Component {
               >
                 <MenuIcon />
               </IconButton>
-              <Typography variant="title" color="inherit" noWrap>
+              <Typography variant="title" color="inherit" noWrap className={classes.flex}>
                 {title || 'Pick your course'}
               </Typography>
+              <Button
+                color="inherit"
+                href="https://github.com/vinhlh/fm-player"
+                target="__blank"
+              >
+                Github
+              </Button>
             </Toolbar>
           </AppBar>
           <Drawer
