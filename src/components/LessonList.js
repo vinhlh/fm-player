@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import classNames from 'classnames'
 
 const styles = theme => ({
   root: {
@@ -30,6 +31,9 @@ const styles = theme => ({
   thumbnail: {
     width: theme.spacing.unit * 8,
     height: theme.spacing.unit * 4.5
+  },
+  activeItem: {
+    background: theme.palette.grey['300']
   }
 })
 
@@ -38,7 +42,7 @@ const propTypes = {}
 const LessonList = ({
   classes,
   courseDetail,
-  activeLession,
+  activeLesson,
   setActiveLesson,
   openDrawer,
   isDrawerOpened,
@@ -55,6 +59,9 @@ const LessonList = ({
             button
             key={lessonId}
             onClick={() => setActiveLesson(lessonId)}
+            className={classNames(
+              lessonId === activeLesson && classes.activeItem
+            )}
           >
             <Avatar className={classes.thumbnail} alt={title} src={thumbnail} />
             <ListItemText primary={title} secondary={description} />

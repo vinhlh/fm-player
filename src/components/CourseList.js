@@ -5,9 +5,13 @@ import ListSubheader from '@material-ui/core/ListSubheader'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
+import classNames from 'classnames'
 
 const styles = theme => ({
-  root: {}
+  root: {},
+  activeItem: {
+    background: theme.palette.grey['300']
+  }
 })
 
 const propTypes = {}
@@ -22,7 +26,11 @@ const CourseList = ({
   <List
     className={classes.root}
     component="nav"
-      subheader={<ListSubheader component="div" disableSticky>All courses</ListSubheader>}
+    subheader={
+      <ListSubheader component="div" disableSticky>
+        All courses
+      </ListSubheader>
+    }
   >
     {Object.entries(allCourses)
       .filter(([_, status]) => status !== 'none')
@@ -34,11 +42,11 @@ const CourseList = ({
             closeDrawer()
             setActiveCourse(courseId)
           }}
+          className={classNames(
+            courseId === activeCourse && classes.activeItem
+          )}
         >
-          <ListItemText
-            primary={courseId}
-            secondary={status}
-          />
+          <ListItemText primary={courseId} secondary={status} />
         </ListItem>
       ))}
   </List>
