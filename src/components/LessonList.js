@@ -13,7 +13,8 @@ const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     overflow: 'scroll',
-    width: '40%'
+    width: '40%',
+    height: '100%'
   },
   container: {
     display: 'flex',
